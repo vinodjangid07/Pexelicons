@@ -123,6 +123,37 @@ header{
     fill: var(--light-text);
  
 }
+.right-nav-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
+    gap: 20px;
+}
+.star-on-github-button{
+    width: fit-content;
+    height: 40px;
+    border-radius: 10px;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    padding: 0px 20px;
+    gap: 10px;
+    font-weight: 500;
+    transition: all .3s;
+}
+.star-on-github-button svg{
+    width: 1.6rem;
+}
+.star-on-github-button svg path{
+    fill: var(--light-text-secondary);
+}
+.star-on-github-button:hover{
+    color: #0ba360;
+}
 
 #visual-toggle-button{
     width: 40px;
@@ -305,6 +336,7 @@ main{
 }
 .icon-image{
     width: 100px;
+    /* filter: hue-rotate(95deg)brightness(0.9); */
 }
 .download-icon{
     position: absolute;
@@ -501,6 +533,9 @@ main{
 @media screen and (max-width:500px) {
     html {
         font-size: 45%;  
+    }
+    .star-on-github-button{
+        display: none;
     }
     .landingContainer{
         height: 100vh;
