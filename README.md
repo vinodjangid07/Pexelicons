@@ -29,7 +29,7 @@ Visit the [Pexelicons Website](https://vinodjangid07.github.io/Pexelicons) to do
 
 Follow these steps to apply custom icons to your folders:
 
-1. **Create or Find a Custom Icon:** Prepare a custom icon (ICO file) that you want to use for your folder.
+1. **Download a Custom Icon:** Download a custom icon (ICO file) that you want to use for your folder. Icons are provided in ICO format, ensuring compatibility with Windows systems.
 2. **Copy the ICO File to the Folder:** Copy the custom ICO file to the folder for which you want to change the icon.
 3. **Right-click on the Folder:** Right-click on the folder, and select "Properties" from the context menu.
 4. **Go to the "Customize" Tab:** In the folder properties window, go to the "Customize" tab.
