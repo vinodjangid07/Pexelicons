@@ -1,0 +1,587 @@
+
+/* 
+██╗░░░██╗██╗███╗░░██╗░█████╗░██████╗░
+██║░░░██║██║████╗░██║██╔══██╗██╔══██╗
+╚██╗░██╔╝██║██╔██╗██║██║░░██║██║░░██║
+░╚████╔╝░██║██║╚████║██║░░██║██║░░██║
+░░╚██╔╝░░██║██║░╚███║╚█████╔╝██████╔╝
+░░░╚═╝░░░╚═╝╚═╝░░╚══╝░╚════╝░╚═════╝░
+░░░░░██╗░█████╗░███╗░░██╗░██████╗░██╗██████╗░
+░░░░░██║██╔══██╗████╗░██║██╔════╝░██║██╔══██╗
+░░░░░██║███████║██╔██╗██║██║░░██╗░██║██║░░██║
+██╗░░██║██╔══██║██║╚████║██║░░╚██╗██║██║░░██║
+╚█████╔╝██║░░██║██║░╚███║╚██████╔╝██║██████╔╝
+░╚════╝░╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═════╝░ */
+@font-face {
+    font-family: 'Minecraft';
+    src: url('assets/fonts/minecraft-font/MinecraftRegular-Bmg3.otf') format('truetype');
+    font-weight: 1 1000;
+    font-style: oblique 0deg; 
+  }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: rgba(128, 128, 128, 0);
+}
+
+*::-moz-selection {
+    background: rgba(128, 128, 128, 0);
+}
+ 
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a1002;
+}
+::-webkit-scrollbar-thumb{
+   background-color: #0ba360;
+   border-radius: 2px;
+
+}
+:root{
+    
+    cursor:default;
+    --border-color: #27272a;
+    --nav-color-one: #0d11179a;
+    --nav-color-two: #12161f;
+    --body-color: #0d1016;
+    --dark-text: #101010;
+    --light-text: #ffffff;
+    --light-text-secondary: #b9b9b9;
+    --light-text-desc: #d8d8d8;
+}
+
+body{
+    background-color: var(--body-color);
+    transition: all .3s;
+    position: relative;
+    color: var(--light-text);
+}
+.lightcolors{
+    --body-color: #f6f6f2;
+    --dark-text: #fff;
+    --light-text: #101010;
+    --nav-color-two: #f6f6f2;
+    --nav-color-one: #f1f1f17e;
+    --border-color: #ddd;
+    --light-text-secondary: #464853;
+    --light-text-desc: #020202;
+}
+
+a{
+    text-decoration: none;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999999;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 65px;
+    background:linear-gradient(to bottom, var(--nav-color-one) , var(--nav-color-two) );
+    padding: 0px 30px;
+    border-bottom: 1px solid var(--border-color);
+    transition: all .3s;
+    backdrop-filter: blur(5px);
+}
+.logo{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logo-text svg path{
+    fill: var(--light-text);
+ 
+}
+
+#visual-toggle-button{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* checkbox */
+#visual-toggle{
+    appearance: none;
+    display: none;
+}
+.svgIcon-toggle{
+    width: 25px;
+}
+.moon-svg{
+    width: 13px;
+    position: absolute;
+    transition: all .3s;
+}
+.sun-svg{
+    opacity: 0;
+    transition: all .3s;
+}
+.lightmode .sun-svg{
+    transform: rotate(180deg);
+    opacity: 1;
+}
+.lightmode .moon-svg{
+    opacity: 0;
+}
+.animate .moon-svg{
+    transform: rotate(360deg);
+    transition: all .3s;
+}
+
+main{
+    width: 100%;
+    margin-top: 65px;
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+.landingContainer{
+    width: 100%;
+    height: calc(100vh - 65px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.left-container{
+    width: 50%;
+    height: 100%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.MainHeading{
+    font-size: 7rem;
+    line-height: 80px;
+    letter-spacing: 0.5px;
+}
+.main-desc{
+    display: flex;
+    font-size: 2rem;
+    color: var(--light-text-secondary);
+    letter-spacing: 0.5px;
+    font-weight: 400;
+
+}
+.main-desc:first-child{
+    font-family: minecraft;
+}
+
+.landing-button-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+    gap: 20px;
+}
+.Download-button {
+    width: 180px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 2rem;
+    padding: 15px 30px;
+    color: white;
+    background: #0ba360;
+    background: linear-gradient(to right,#0ba360,#3cba92);
+    box-shadow: 0px 14px 56px -11px #0ba360;
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    letter-spacing: 0.5px;
+
+  }
+  
+  .Download-button svg {
+    margin-right: 8px;
+    width: 25px;
+  }
+  
+  .Download-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em rgba(88, 71, 116, 0.627);
+  }
+  
+  .Download-button:active {
+    box-shadow: 0 0.3em 1em -0.5em rgba(88, 71, 116, 0.627);
+  }
+  
+  .right-container{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+  .right-container img{
+    width: 80%;
+  }
+
+/* landing container style ends */
+
+.content-container{
+    width: 100%;
+    height: fit-content;
+    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 100px;
+    gap: 20px;
+    padding-bottom: 0;
+}
+
+.content-container-heading{
+    font-size: 4.5rem;
+    color: var(--light-text);
+    text-align: center;
+}
+.content-container-subheading{
+    font-size: 2rem;
+    color: var(--light-text-secondary);
+    text-align: center;
+}
+.all-icons-wrapper{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+    transition: all .3s;
+}
+.icon-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid var(--border-color);
+    position: relative;
+    padding: 20px 0;
+    /* border-radius: 20px; */
+    transition: all .3s;
+}
+.icon-image{
+    width: 100px;
+}
+.download-icon{
+    position: absolute;
+    width: 95%;
+    height: 35px;
+    background: #0ba360;
+    background: linear-gradient(to right,#0ba360,#3cba92);
+    box-shadow: 0px 14px 56px -11px #0ba3618c;
+    background-size: 150%;
+    background-position: left;
+    border: none;
+    color: white;
+    /* border-radius: 10px; */
+    cursor: pointer;
+    transition: all .5s;
+    opacity: 0;
+    bottom: 10px;
+}
+.display-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all .3s;
+}
+.icon-wrapper:hover .display-container{
+    filter: brightness(0.5);
+}
+.icon-wrapper:hover .download-icon{
+    transition: all .5s;
+    opacity: 1;
+    animation: download-button .3s linear;
+
+}
+@keyframes download-button {
+    from{
+        transform: translateY(10px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+.download-icon:hover{
+    background-position: right;
+    box-shadow: 0px 14px 56px -11px #0ba360;
+}
+.icon-name{
+    font-size: 2rem;
+    font-weight: 400;
+    width:100%;
+    text-align: center;
+    transition: all .3s;
+}
+
+
+.how-to-use{
+    margin-top: 65px;
+    padding: 0 200px 0 200px;
+}
+
+.how-to-use-button{
+    font-size: 2rem;
+    width: 180px;
+    height: fit-content;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border: 1px solid var(--border-color);
+    color: var(--light-text);
+    font-weight: 500;
+    background-color: var(--body-color);
+    transition: all .3s;
+}
+.how-to-use-button:hover{
+    
+    filter: invert(1);
+}
+.how-to-use ul{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+}
+
+.how-to-use ul li strong{
+    font-weight: 700;
+    color: var(--light-text);
+    padding-right: 10px;
+}
+.how-to-use ul li{
+    font-size: 2rem;
+    padding-left: 20px;
+    font-weight: 400;
+    color: var(--light-text-desc);
+}
+/* footer */
+
+.footerContainer{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 100px;
+    transition: all .3s;
+    
+  }
+  .footerContainer p{
+    color: var(--light-text);
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    transition: all .3s;
+  }
+  .footerContainer a{
+    text-decoration: none;
+    color: #0ba360;
+    transition: all .3s;
+  }
+  .fa-copyright{
+    font-size: 1.3rem;
+    color: var(--light-text);
+  }
+/* footer */
+
+
+
+/* responsive code below*/
+@media screen and (max-width:1920px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    html {
+        font-size: 60%;
+    }
+    .download-icon{
+        width: 100%;
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width:998px) {
+    html {
+        font-size: 55%;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .landingContainer{
+        flex-direction: column;
+        height: fit-content;
+    }
+    .left-container{
+        width: 100%;
+    }
+    .right-container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .right-container img{
+        width: 60%;
+    }
+    .all-icons-wrapper{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:768px) {
+    html {
+        font-size: 50%;
+    }
+    .left-container{
+        padding: 40px;
+    }
+    .content-container{
+        padding: 40px;
+    }
+ 
+}
+
+@media screen and (max-width:500px) {
+    html {
+        font-size: 45%;  
+    }
+    .landingContainer{
+        height: 100vh;
+    }
+    .left-container{
+        padding: 40px;
+        padding-top: 50px;
+        gap: 20px;
+    }
+    .landing-button-container{
+        margin-top: 0;
+    }
+    .right-container{
+        padding: 40px;
+        padding-top: 0;
+        justify-content: flex-start;
+    }
+    .right-container img{
+        width: 100%;
+    }
+    .MainHeading{
+        line-height: unset;
+        font-size: 5rem;
+    }
+    .main-desc{
+        font-size: 1.8rem;
+    }
+    .content-container{
+       margin-top: 50px;
+       padding-bottom: 0;
+    }
+    .Download-button{
+        font-size: 1.8rem;
+        padding: 10px 20px;
+    }
+    .how-to-use-button{
+        font-size: 1.8rem;
+        padding: 10px 20px;
+    }
+
+    .how-to-use ul{
+        gap: 10px;
+        margin-top: 0;
+    }
+    .how-to-use ul li{
+        margin-left: 10px;
+        padding-left: 10px;
+        line-height: 1.6em;
+    }
+    .footerContainer{
+        height: 10vh;
+    }
+    .footerContainer p{
+        font-size: 1.3rem;
+    }
+
+}
+
+@media screen and (max-width:450px) {
+    html {
+        font-size: 43%;
+    }
+    .all-icons-wrapper{
+        grid-template-columns: 1fr 1fr;
+    }
+    .landing-button-container{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+ 
+}
+
+@media screen and (max-width:375px) {
+    html {
+        font-size: 40%;
+    }
+    .all-icons-wrapper{
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width:300px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+/* responsive code above */
+
