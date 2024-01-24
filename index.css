@@ -583,5 +583,30 @@ main{
     }
 }
 
+
+/* height media  */
+@media screen and (min-height:700px) {
+    .left-container {
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 600px) and (min-height: 700px) {
+
+    .left-container {
+        justify-content: center;
+    }
+  
+    .right-container {
+        align-items: flex-start;
+        padding-bottom: 0;
+    }
+
+    .content-container{
+        margin-top: 0;
+    }
+}
+
 /* responsive code above */
 
