@@ -51,4 +51,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-<p align="center">Design & Built by [@Vinodjangid07](https://github.com/vinodjangid07) | &copy; twentytwentyfour</p>
+<p align="center">Design & Built by <a href="https://github.com/vinodjangid07">@Vinodjangid07</a> | &copy; twentytwentyfour</p>
