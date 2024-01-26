@@ -342,14 +342,12 @@ main{
     position: absolute;
     width: 95%;
     height: 35px;
-    background: #0ba360;
-    background: linear-gradient(to right,#0ba360,#3cba92);
-    box-shadow: 0px 14px 56px -11px #0ba3618c;
+    background-color: var(--light-text);
+    color: var(--dark-text);
+    box-shadow: 0px 14px 56px -11px #a3a3a38c;
     background-size: 150%;
     background-position: left;
     border: none;
-    color: white;
-    /* border-radius: 10px; */
     cursor: pointer;
     transition: all .5s;
     opacity: 0;
@@ -383,7 +381,7 @@ main{
 }
 .download-icon:hover{
     background-position: right;
-    box-shadow: 0px 14px 56px -11px #0ba360;
+    box-shadow: 0px 14px 56px -11px #919191;
 }
 .icon-name{
     font-size: 2rem;
