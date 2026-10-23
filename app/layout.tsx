@@ -10,7 +10,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://pexelicons.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://pexelicons.vinodjangid.site"
   ),
   title: {
     default: "Pexelicons | Custom Windows Folder Icons",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Pexelicons | Custom Windows Folder Icons",
     description:
       "A free collection of 30 custom 32-bit Windows folder icons in saturated honey yellow and royal purple colorways. Download free ICO files for Windows 10 and 11.",
-    url: "https://pexelicons.com",
+    url: "https://pexelicons.vinodjangid.site",
     siteName: "Pexelicons",
     images: [
       {
