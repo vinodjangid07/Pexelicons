@@ -1,54 +1,97 @@
-# <a href="https://vinodjangid07.github.io/Pexelicons" target="_blank">Pexelicons</a>
+# Pexelicons
 
-![Pexelicons Logo](assets/images/Websitescreenshot.png)
+Pexelicons is a collection of custom Windows folder icons. Browse 30 handcrafted 32-bit ICO files in honey yellow and royal purple colorways, search by name or category, save favorites in your browser, and download icons directly.
 
-Pexelicons is a website that offers custom folder icons for Windows, allowing users to personalize their PC by changing the default folder icons to match their style preferences.
+The site is designed around the icons themselves. It pairs an interactive specimen stage and scale preview slider with a searchable catalog, a desktop comparison section, and a practical Windows installation guide.
 
 ## Features
 
-- 🎨 **Custom Icons:** Explore a world of personalized file folder icons inspired by various themes.
-- 🚀 **Easy to Use:** Download and apply custom icons to your folders effortlessly.
-- 💻 **Compatibility:** Icons are provided in ICO format, ensuring compatibility with Windows systems.
+- Browse all 30 Windows folder icons across yellow and royal purple colorways.
+- Filter the collection by color (all, yellow, purple) and category (Work, Media, System).
+- Search by icon name, color, or category with instant keyboard shortcut (`/`).
+- Toggle between gallery grid and compact list view.
+- Interactive scale preview slider testing sizes from 16px up to 256px.
+- Save favorites in local browser storage.
+- One-click direct ICO download for Windows 10 and 11.
+- Step-by-step Windows folder icon customization guide.
+- Responsive layout with accessible keyboard focus styles and smooth micro-interactions.
 
-## Table of Contents
+## Run locally
 
-- [Getting Started](#getting-started)
-  - [Download Icons](#download-icons)
-  - [How to Use](#how-to-use)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+Requirements: Node.js and pnpm.
 
-## Getting Started
+```bash
+pnpm install
+pnpm dev
+```
 
-### Download Icons
+Open [http://localhost:3000](http://localhost:3000).
 
-Visit the [Pexelicons Website](https://vinodjangid07.github.io/Pexelicons) to download custom folder icons for your PC.
+## Available commands
 
-### How to Use
+```bash
+pnpm dev       # Start the Next.js development server
+pnpm build     # Create an optimized production build
+pnpm start     # Start the production server
+pnpm lint      # Run ESLint
+```
 
-Follow these steps to apply custom icons to your folders:
+## Project structure
 
-1. **Download a Custom Icon:** Download a custom icon (ICO file) that you want to use for your folder. Icons are provided in ICO format, ensuring compatibility with Windows systems.
-2. **Copy the ICO File to the Folder:** Copy the custom ICO file to the folder for which you want to change the icon.
-3. **Right-click on the Folder:** Right-click on the folder, and select "Properties" from the context menu.
-4. **Go to the "Customize" Tab:** In the folder properties window, go to the "Customize" tab.
-5. **Click on "Change Icon":** Look for the "Change Icon" button and click on it.
-6. **Browse for the Custom ICO File:** Browse to the location where you copied the custom ICO file and select it.
-7. **Apply and OK:** Apply the changes, and then click "OK" to close the properties window.
+```text
+app/
+  catalog.tsx      Searchable, filterable icon catalog state and layout
+  icon-data.ts     Icon records, categories, colorways, and asset URL helpers
+  layout.tsx       Root layout, viewport, and SEO metadata
+  page.tsx         Landing page assembling hero, specimen, catalog, and guide
+  globals.css      Tailwind CSS setup, color tokens, and base typography
+components/
+  catalog-filters.tsx  Search bar, colorway filters, and view mode toggles
+  comparison-section.tsx Windows folder vs Pexelicons comparison
+  empty-state.tsx      Zero-state fallback view
+  footer.tsx           Site footer and author attribution
+  guide-card.tsx       Single step card
+  guide-section.tsx    Four-step Windows folder customization guide
+  hero-header.tsx      Top headline and badge highlights
+  icon-card.tsx        Gallery grid icon item with lift effect and download button
+  icon-row.tsx         Compact list item
+  navbar.tsx           Sticky navigation with responsive mobile menu
+  scale-slider.tsx     Dedicated icon scale slider mechanism
+  specimen-viewer.tsx  Active specimen stage, specs, and scale preview
+  wordmark.tsx         Brand logo and typography
+public/
+  brand/           Brand logo and favicon
+  icons/
+    yellow/        Yellow ICO files
+    purple/        Purple ICO files
+  og-image.jpg     Social preview OpenGraph image
+  robots.txt       Search engine indexing instructions
+```
 
-## Contributing
+## Icon files
 
-If you'd like to contribute to Pexelicons, feel free to open an issue or submit a pull request. Your contributions are highly appreciated!
+The ICO files are served from `public/icons/yellow` and `public/icons/purple`. Their names, categories, colorways, and stable IDs are defined in [`app/icon-data.ts`](app/icon-data.ts). Keep the filenames and folder names in sync with those records. Some original filenames contain spaces or spelling variations. The URL helper encodes filenames before building download and image URLs.
+
+Favorites are stored in the visitor's browser under `pexelicons:favorites`. They are local to that browser and are not synced between devices.
+
+## Change a folder icon in Windows
+
+1. Download an ICO file and save it somewhere that will not move.
+2. Right-click a folder and select **Properties**.
+3. Open **Customize**, then select **Change Icon**.
+4. Browse to the downloaded ICO file, select it, then choose **Apply** and **OK**.
+
+Keep the ICO file at the same path. Windows uses that file to display the folder icon.
+
+## Design direction
+
+The site uses a cool neutral light palette (`#f4f6f8` canvas, `#ffffff` surface, `#0c0d0e` hard black ink), clean typography, zero border outlines, zero drop shadows, an interactive scale preview slider (16px to 256px), an interactive specimen showcase, and a direct Windows folder comparison between default yellow and royal purple Photos assets. Design tokens live in `app/globals.css`. Styling is expressed with Tailwind CSS utilities.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+See [`LICENSE`](LICENSE) for the MIT license notice included with the project.
 
-## Contact
+## Project links
 
-- For inquiries, contact infovinodjangid@gmail.com
-
----
-
-<p align="center">Design & Built by <a href="https://github.com/vinodjangid07">@Vinodjangid07</a> | &copy; twentytwentyfour</p>
+- Source: [github.com/vinodjangid07/Pexelicons](https://github.com/vinodjangid07/Pexelicons)
+- Creator: [Vinod Jangid](https://github.com/vinodjangid07)
